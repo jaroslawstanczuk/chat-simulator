@@ -1,0 +1,1167 @@
+{
+    "customerName": "Arnold, Michael",
+    "customerFirstName": "Michael",
+    "customerLastName": "Arnold",
+    "customerSalutation": "Mr.",
+    "booking": {
+        "pnr": "ARNOLD 25NOV TN124",
+        "passengers": [
+            {
+                "lastName": "Arnold",
+                "firstName": "Michael"
+            },
+            {
+                "lastName": "Arnold",
+                "firstName": "Mary Jane"
+            }
+        ],
+        "contactDetails": [
+            {
+                "mean": "phone",
+                "contact": "+31 67 123 456 78"
+            },
+            {
+                "mean": "email",
+                "contact": "michael@arnold.com"
+            }
+        ],
+        "flights": [
+            {
+                "number": "TN124",
+                "date": "25NOV",
+                "class": "N",
+                "origin": "AMS",
+                "destination": "TPE",
+                "status": "OPEN"
+            },
+            {
+                "number": "TN125",
+                "date": "09DEC",
+                "class": "N",
+                "origin": "TPE",
+                "destination": "AMS",
+                "status": "OPEN"
+            }
+        ],
+        "pricing": {
+            "fare": "LIGHT",
+            "price": "2110.00",
+            "currency": "EUR"
+        }
+    },
+    "quality": {
+        "criticals": [],
+        "markdowns": [],
+        "categories": {
+            "Communication": 5,
+            "Human connection": 10,
+            "Right servicing": 5,
+            "Contact resolution": 5,
+            "Invisible selling": 0,
+            "Adherence to procedure": 5
+        },
+        "formCategories": [
+            {
+                "id": 1,
+                "categoryName": "Communication",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 2,
+                "categoryName": "Human connection",
+                "maxScore": 10,
+                "achievedScore": 10
+            },
+            {
+                "id": 3,
+                "categoryName": "Right servicing",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 4,
+                "categoryName": "Contact resolution",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 5,
+                "categoryName": "Invisible selling",
+                "maxScore": 0,
+                "achievedScore": 0
+            },
+            {
+                "id": 6,
+                "categoryName": "Adherence to procedure",
+                "maxScore": 5,
+                "achievedScore": 5
+            }
+        ]
+    },
+    "membership": {},
+    "conversation": {
+        "start": {
+            "message": "Hi there, I would like to book a flight from Amsterdam to Taipei. I tried to book online, but I got an error while trying to pay.",
+            "sharedReply": "Hello and welcome to Tiger Airlines. My name is <username> and I will assist you today.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "How can I help?",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "professionalism",
+                                "description": "Failed to refer to what customer wrote in their first message."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path101"
+                },
+                {
+                    "id": 2,
+                    "option": "I can definitely help you with that. Do you have any specific dates in mind?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "No empathy expressed when customer mentioned issues with our website."
+                            },
+                            {
+                                "categoryId": 3,
+                                "category": "Right servicing",
+                                "score": -2,
+                                "description": "You could have looked for a failed IBE booking rather than jump straight to create a new one from scratch."
+                            }
+                        ]
+                    },
+                    "goto": "path202"
+                },
+                {
+                    "id": 3,
+                    "option": "Please tell me your desired dates, flights, cabin and number of passengers.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 3,
+                                "category": "Right servicing",
+                                "score": -2,
+                                "description": "You could have looked for a failed IBE booking rather than jump straight to create a new one from scratch."
+                            },
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -8,
+                                "description": "No empathy expressed when customer mentioned issues with our website. Neutral phrasing, no reassurance."
+                            }
+                        ]
+                    },
+                    "goto": "path301"
+                },
+                {
+                    "id": 4,
+                    "option": "I am very sorry hear about the error on our website. Please give me one flight number, its date and your last name. I will try to locate the unfinished booking.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path401"
+                }
+            ]
+        },
+        "path101": {
+            "message": "As I wrote, I tried to book Amsterdam-Taipei on your website and it crashed.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Understood. Please tell me your desired dates, flights, cabin and number of passengers.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path301"
+                },
+                {
+                    "id": 2,
+                    "option": "I apologize for missing your initial message. I will be happy to check that for you.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path102"
+                },
+                {
+                    "id": 3,
+                    "option": "I am very sorry hear about the error on our website. Please give me one flight number, its date and your last name. I will try to locate the unfinished booking.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path203"
+                }
+            ]
+        },
+        "path102": {
+            "message": "Great. Do you need anything from me?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Please tell me your desired dates, flights, cabin and number of passengers.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path301"
+                },
+                {
+                    "id": 2,
+                    "option": "Please give me one flight number, its date and your last name. I will try to locate the unfinished booking.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Do you have a booking reference?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path103"
+                }
+            ]
+        },
+        "path103": {
+            "message": "No, I did't get that far.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Without a valid booking number I can't help you, I'm afraid. Have you tried to book online one more time?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path104"
+                },
+                {
+                    "id": 2,
+                    "option": "No worries. Please tell me your desired dates, flights, cabin and number of passengers.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path301"
+                },
+                {
+                    "id": 3,
+                    "option": "Please give me one flight number, its date and your last name. I will try to locate the unfinished booking.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path104": {
+            "message": "I tried to start over, but the same price is not available anymore.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Okay, please tell me the price you previously had online, I will check in my system.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "In that case please try again later, we are currently experiencing issues with our website.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path105"
+                },
+                {
+                    "id": 3,
+                    "option": "I'm sorry to hear that. Please give me one flight number, its date and your last name. I will try to locate the unfinished booking.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path105": {
+            "message": "So you cannot help me with the booking?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I'm sorry, this price is probably blocked and will be released later automatically.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path106"
+                },
+                {
+                    "id": 2,
+                    "option": "I can create a complaint case for you. Would you like me to do that?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "There is one more thing we can try. Please give me one flight number, its date and your last name. I will try to locate the unfinished booking.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path106": {
+            "message": "This is so frustrating. I guess I will try again later.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "I apologize for the inconvenience. Would you like me to submit a complaint on your behalf?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "I understand. Sometimes our website is quite unstable. We appreciate your understanding.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path107"
+                }
+            ]
+        },
+        "path107": {
+            "message": "Yeah, apparently so. I know it's not your fault. I'm just disappointed that I couldn't buy the tickets for this price.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I understand. Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path108"
+                },
+                {
+                    "id": 2,
+                    "option": "Once again, we apologize for the technical issue. Could I check anything else for you at the moment?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path108"
+                },
+                {
+                    "id": 3,
+                    "option": "Nevertheless, I'm wishing you a good day and I would appreciate if you could rate our service after the chat.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path108": {
+            "message": "No, that's it. Thank you.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you as well. Have a nice day. Goodbye!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Thank you for contacting Tiger Airlines today. I hope the issue will be resolved soon and you will get the same price online. After the chat there will also be a short survey. Goodbye!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "We appreciate you contacting Tiger Airlines today. I would be glad if you could rate my service in a short survey after the chat. Have a good day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path202": {
+            "message": "Yes, we would like to fly out on 25th November and return on 9th December.",
+            "sharedReply": "Thank you.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "How many passengers are flying and in which cabin?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path204"
+                },
+                {
+                    "id": 2,
+                    "option": "Okay, I will check the price for you, one moment please.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path203": {
+            "message": "The flight number is TN124 on 25th November. My last name is Arnold.",
+            "sharedReply": "Thank you for providing the details. I found the reservation.",
+            "image": "../assets/img/scenario002/ibe.png",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I will send you a payment link now. The full price is EUR 2110.00.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 2,
+                    "option": "Please confirm the number of passengers, one full name and the email address used to create the reservation.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path404"
+                },
+                {
+                    "id": 3,
+                    "option": "I will create a new one for you and send you the payment link.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path204": {
+            "message": "We are two. Economy please.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Two adults?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path205"
+                },
+                {
+                    "id": 2,
+                    "option": "Great, I will check the price now.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Your phone number and email address please?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path205": {
+            "message": "Exactly, my wife and I.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Perfect, I will check the price for you now.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Your phone number and email address please?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path305"
+                },
+                {
+                    "id": 3,
+                    "option": "Sounds great. I'm sure you'll have a nice time in Taipei!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path301": {
+            "message": "We would like to fly out on 25th November and return on 9th December. We are two adults and we fly economy.",
+            "sharedReply": "Thank you for this information.",
+            "image": "../assets/img/scenario002/pricing.png",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "The best price I get on these days is 2110.00 EUR for two.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path302"
+                },
+                {
+                    "id": 2,
+                    "option": "We have three fare types. Light is the most affordable. Essential includes more baggage and free seats. Flex also has no change fee and free leg room seats. Which one sounds best?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path307"
+                },
+                {
+                    "id": 3,
+                    "option": "The best value for money here is 2435.00 EUR. You have two pieces of baggage and regular seat reservation included in the price.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path307"
+                }
+            ]
+        },
+        "path302": {
+            "message": "Okay, that's the same price I saw online. Please book it for us.",
+            "sharedReply": "I understand. Thank you for your confirmation.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Please give me full names of the passengers exactly as printed in the passports.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path303"
+                },
+                {
+                    "id": 2,
+                    "option": "I would need names of the passengers please.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path303"
+                },
+                {
+                    "id": 3,
+                    "option": "If you are our member, I could take over your details from the profile. I would only need your membership number. If you don't, that's fine too!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path310"
+                }
+            ]
+        },
+        "path303": {
+            "message": "My name is Michael Arnold and my wife's name is Mary Jane Arnold.",
+            "sharedReply": "Thank you.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Would you like to select seats now? The price range is 40 to 60 EUR for a regular seat, leg room seats cost 150 EUR apiece.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path304"
+                },
+                {
+                    "id": 2,
+                    "option": "I will also need your phone number and email address.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path304": {
+            "message": "That's fine, we can select seats at check-in, right?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Exactly, we offer complimentary seat reservation at check-in. Please note that the selection may be limited as many seats will already have been reserved.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path308"
+                },
+                {
+                    "id": 2,
+                    "option": "In that case I will need your phone number and email address.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path305": {
+            "message": "My phone number is +31 67 123 456 78 and the email address is michael@arnold.com",
+            "sharedReply": "Thank you for the information.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I will send you a payment link now.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 2,
+                    "option": "This price is saved for you for 24 hours. The payment link I will send to your email will be valid for 12 hours.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 3,
+                    "option": "Your fare conditions are as follows. Change fee is 100 EUR plus fare and tax difference. Cancellation fee is 200 EUR. No show fee is 300 EUR.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path309"
+                }
+            ]
+        },
+        "path306": {
+            "message": "Okay, thank you. I received it and I just paid.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path501"
+                },
+                {
+                    "id": 2,
+                    "option": "In that case I'm wishing you a good day. There will be a short survey after the chat. Goodbye!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Thank you for letting me know. You will receive the booking confirmation shortly.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path307": {
+            "message": "The lowest one is fine, thank you.",
+            "sharedReply": "Of course. That will be 2110.00 EUR for two.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I need the names of passengers.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path303"
+                },
+                {
+                    "id": 2,
+                    "option": "Please give me the names of both passengers as per their travel documents.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path303"
+                },
+                {
+                    "id": 3,
+                    "option": "If you are our member, I could take over your details from the profile. I would only need your membership number. If you don't, that's fine too!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path310"
+                }
+            ]
+        },
+        "path308": {
+            "message": "Okay, thank you for the information, we will take our chances. 😂",
+            "sharedReply": "I understand.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Could you provide me with your mobile phone number and email address?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path309": {
+            "message": "Thanks, I saw them online.",
+            "sharedReply": "Great, thank you for confirming that.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I will send you a payment link now.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 2,
+                    "option": "This price is saved for you for 24 hours. The payment link I will send to your email will be valid for 12 hours.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 3,
+                    "option": "Would you like to select seats now? The price range is 40 to 60 EUR for a regular seat, leg room seats cost 150 EUR apiece.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path304"
+                }
+            ]
+        },
+        "path310": {
+            "message": "I'm not a member with Tiger Airlines. I am a member of Tulip Airways. I guess you are in a partnership?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "That's fine. I will just need your names as per travel documents.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path303"
+                },
+                {
+                    "id": 2,
+                    "option": "That's true, we are in the same alliance. I will be happy to add your Tulip membership number to your booking. Please check with them how many miles you will earn for these flights.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path311"
+                },
+                {
+                    "id": 3,
+                    "option": "Sorry, I'm not able to add another airline's membership number to the booking. I just need your names then.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path303"
+                }
+            ]
+        },
+        "path311": {
+            "message": "That's great, my Tulip membership number is TP1432765098. I will ask them about the mileage.",
+            "sharedReply": "Thank you, I will add your membership number to the booking.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Perfect, please provide me your names as per travel documents. I will add your membership number straight afterwards.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path303"
+                }
+            ]
+        },
+        "path312": {
+            "message": "It has just arrived. Thank you for your help! I was really stressing about this payment thing.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "In that case I would like to thank you for chatting with me, there will be a short survey once we disconnect. Have a good day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm glad to hear that. You did the right thing by contacing us immediately so that we could secure this price for you!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path313"
+                },
+                {
+                    "id": 3,
+                    "option": "Super, I'm happy it all worked out in the end. You can rate our service after this chat if you wish. Have a great day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path313": {
+            "message": "This is great customer service. Thank you so much, that's everything. I will give you 5 stars. 🤩🤩🤩🤩🤩",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "In that case I would like to thank you for chatting with me, there will be a short survey once we disconnect. Have a good day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "You are too kind! Thank you for your kind words, sir. I would like to thank you for booking with Tiger and I will send you the customer satisfaction survey now. Have a great day and enjoy your stay in Taipei!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Thank you, that's what we're here for. You can rate our service after this chat if you wish. Have a great day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path401": {
+            "message": "My last name is Arnold, the flight is on 25th November and the flight number is TN124.",
+            "sharedReply": "",
+            "image": "../assets/img/scenario002/ibe.png",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I was able to find it. Please confirm the price you saw online.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path402"
+                },
+                {
+                    "id": 2,
+                    "option": "Okay, I found it. I will send you a payment link now.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path405"
+                },
+                {
+                    "id": 3,
+                    "option": "Could you please confirm the number of passengers, one full name and the email address used to create your booking?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path404"
+                }
+            ]
+        },
+        "path402": {
+            "message": "I was somewhere around 2100 euro.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "The price I have for you is 2110.00 EUR. It is the Economy Light fare. Is that fine?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path403"
+                },
+                {
+                    "id": 2,
+                    "option": "Got it. I will send you a payment link now.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Unfortunately my system gives me a higher price. I am getting 2110.00 EUR.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path403"
+                }
+            ]
+        },
+        "path403": {
+            "message": "That's fine, it could have been 2110, I don't remember exactly.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you for confirming. I will create a brand new reservation for you and save it for 24 hours. I will also send you a payment link valid for 12 hours shortly.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 2,
+                    "option": "Okay, perfect. I have just sent you a payment link, it's valid for 12 hours.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 3,
+                    "option": "Could you please confirm the number of passengers, one full name and the email address used to create your booking?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path404"
+                }
+            ]
+        },
+        "path404": {
+            "message": "We are two, my name is Michael Arnold. My phone number is +31 67 123 456 78 and the email address is michael@arnold.com",
+            "sharedReply": "Thank you.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I will create a brand new reservation for you and save it for 24 hours. I will also send you a payment link valid for 12 hours shortly.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 2,
+                    "option": "I have just sent you a payment link, it's valid for 12 hours.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 3,
+                    "option": "Your fare conditions are as follows. Change fee is 100 EUR plus fare and tax difference. Cancellation fee is 200 EUR. No show fee is 300 EUR.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path309"
+                }
+            ]
+        },
+        "path405": {
+            "message": "But what is the price? Online I saw somewhere around 2100 euro. Is it the same?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "The price I have for you is 2110.00 EUR. It is the Economy Light fare. Is that fine?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path403"
+                },
+                {
+                    "id": 2,
+                    "option": "Unfortunately my system gives me a higher price. I am getting 2110.00 EUR.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path403"
+                }
+            ]
+        },
+        "path501": {
+            "message": "I almost forgot, my wife is vegan. Could we book a vegan meal for her?",
+            "sharedReply": "Thank you for mentioning this.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I have just confirmed a vegan meal for your wife on both flights.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path502"
+                },
+                {
+                    "id": 2,
+                    "option": "We offer multiple inflight dining options, your wife will be able to select a vegan meal on board.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path504"
+                },
+                {
+                    "id": 3,
+                    "option": "You can book a meal of your choice online. Please go to Manage Booking on our website.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path505"
+                }
+            ]
+        },
+        "path502": {
+            "message": "Perfect, thank you so much!",
+            "sharedReply": "You're most welcome.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "If that's everything, I would like to thank you for chatting with me. There will be a short survey after the chat. Have a nice day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Is there anything else I could help you with?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path503"
+                },
+                {
+                    "id": 3,
+                    "option": "Great. Thank you for chatting with us today. Goodbye!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path503": {
+            "message": "No, everything is great. Thank you for your help.",
+            "sharedReply": "My pleasure.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I would like to thank you for chatting with me. There will be a short survey after the chat. Have a nice day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Thank you for choosing Tiger Airlines. I would be glad if you could spare two minutes to rate our service in a short survey. Have a great day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Great. Thank you for chatting with us today. Goodbye!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path504": {
+            "message": "Oh, really? This is our first time flying with Tiger Airlines. We are both silver members with Tulip Airways and my wife always had to request her a vegan meal in advance.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Exactly, please ask the cabin crew. They will help you with that.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "I apologize, I have booked the vegan meal for your wife. We actually do require to reserve it no later than 24 hours before departure.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path502"
+                },
+                {
+                    "id": 3,
+                    "option": "I heard that Tulip Airways require this, but rest assured, our airline always has enough vegan meals prepared just in case.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path505": {
+            "message": "Alright, I will do that later. Thank you.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Is there anything else I can check for you?",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "In that case thank you for contacting Tiger Airlines, there will be a short survey after our chat. Have a good day!",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "path502"
+                },
+                {
+                    "id": 3,
+                    "option": "I understand. If that's all, thank you for contacting us and I wish you a nice day.",
+                    "quality": {
+                        "criticals": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        }
+    }
+}

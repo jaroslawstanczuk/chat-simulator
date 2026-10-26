@@ -1,0 +1,56 @@
+.email-main {
+    display: flex;
+    background-color: #FFA07A;
+    max-height: 90%;
+    margin: 10px 20px;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.email-draft-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.email-controls {
+    width: 100%;
+}
+
+.email-section {
+    display: flex;
+    align-items: center;
+}
+
+.email-section-label {
+    flex: 0 0 15%;
+    white-space: nowrap;
+}
+
+.email-section-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.email-section-input input {
+    width: 100%;
+}
+
+.email-draft {
+    padding: 20px;
+    min-width: 40%;
+}
+
+.email-draft-container {
+    width: 100%;
+}
+
+.email-draft textarea {
+    resize: none;
+    width: 101%;
+    height: 250px;
+    border-radius: 8px;
+    outline: none;
+}

@@ -1,0 +1,44 @@
+.membership {
+    background-color: #FF69B4;
+    height: 550px;
+    margin: 20px;
+    border: 3px solid #000000;
+    border-radius: 8px;
+    box-shadow: 3px 3px;
+    padding: 30px;
+}
+
+.membership-content {
+    height: 90%;
+    margin-top: 30px;
+    display: flex; 
+}
+
+.membership-details-info, .membership-details-validity {
+    display: flex;
+    gap: 15px;
+}
+
+.membership-details-personal, .membership-details-status, .membership-details-block, .membership-details-state {
+    flex: 1;
+    background-color: #FFB2EF;
+    margin: 10px 0;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    box-shadow: 2px 2px;
+}
+
+.circled-sign {
+    display: flex;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000;
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    font-weight: 700;
+    user-select: none;
+}

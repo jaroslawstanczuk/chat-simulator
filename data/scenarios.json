@@ -1,0 +1,19 @@
+{
+    "scenarios":[
+        {
+            "id": 1,
+            "filename": "scenario001.json",
+            "description": "Damaged baggage"
+        },
+        {
+            "id": 2,
+            "filename": "scenario002.json",
+            "description": "New revenue booking"
+        },
+        {
+            "id": 3,
+            "filename": "scenario003.json",
+            "description": "Locked account"
+        }
+    ]
+}

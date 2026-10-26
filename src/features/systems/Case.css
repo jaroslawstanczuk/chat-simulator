@@ -1,0 +1,47 @@
+.case-management {
+    display: flex;
+    flex-direction: column;
+    background-color: #C4A1FF;
+    margin: 10px 20px;
+    padding: 50px 20px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    box-shadow: 3px 3px;
+
+}
+
+.case-management-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.case-button {
+    color: #FFFFFF;
+    font-weight: 700;
+    background-color: #9723C9;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    box-shadow: 3px 3px #000000;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.case-create{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 50%;
+}
+
+.case-create > div {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+input {
+    border-radius: 8px;
+    padding: 5px;
+}

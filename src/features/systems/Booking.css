@@ -1,0 +1,51 @@
+.booking {
+    padding: 20px;
+    background-color: #FDFD96;
+    margin: 10px 40px;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-search-input {
+    max-width: 20%;
+    outline: none;
+}
+
+.reservation {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.reservation-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.passengers {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-detail {
+    display: flex;
+    flex-direction: row;
+}
+
+.passenger, .contact-detail, .flight {
+    background-color: #F4D738;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px;
+    padding: 8px 16px;
+}

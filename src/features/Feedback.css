@@ -1,0 +1,34 @@
+.feedback-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #FDFD96;
+    width: 50%;
+    padding: 30px 50px;
+    margin: 100px auto;
+    border-radius: 16px;
+    border: 5px solid #000000;
+}
+
+.eval-table {
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.eval-table thead {
+    background-color: #E3A018;
+}
+
+.eval-table th, td {
+    border: solid 2px black;
+    text-align: center;
+    padding: 4px 12px;
+}
+
+.eval-table tr:nth-child(odd){
+    background-color: #FFDB58;
+}
+
+.eval-table tr:nth-child(even){
+    background-color: #F4D738;
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Public Sans", sans-serif;
+  /* margin: 0; */
+}
+
+@media (max-width: 768px){
+  .sidebar { display: none; }
+}
+
+html, body {
+  min-width: 768px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app > :first-child {
+  flex: 0 0 5%;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: #BAFCA2;
+}
+
+@media (max-width: 768px){
+  .page {
+    flex-direction: column;
+  }
+}
+
+.page > :first-child {
+  flex: 0 0 15%;
+}
+
+.page > :last-child {
+  flex: 1;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.systems {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.systems > :first-child {
+  flex: 1;
+}
+
+.systems > :last-child {
+  flex: 1;
+}

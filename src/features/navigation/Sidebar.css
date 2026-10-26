@@ -1,0 +1,36 @@
+.sidebar {
+    background-color: #2FFF2F;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 3px 3px;
+    margin: 10px 20px;
+    height: 75%;
+}
+
+.sidebar > h2 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.sidebar > h4 {
+    margin-top: 100px;
+    margin-left: 10px;
+}
+
+.button {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 20px 10px;
+    text-align: center;
+    margin: 10px 20px;
+    border: 2px solid black;
+    box-shadow: 3px 3px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button:hover{
+    background-color: #FFFF00;
+    font-weight: 700;
+}

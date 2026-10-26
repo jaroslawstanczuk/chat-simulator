@@ -1,0 +1,465 @@
+{
+    "customerName": "Wagner, Kendrick",
+    "customerFirstName": "Kendrick",
+    "customerLastName": "Wagner",
+    "customerSalutation": "Mr.",
+    "booking": {},
+    "membership": {
+        "name": "Mr Kendrick Wagner",
+        "dob": "19JUL72",
+        "phone": "+852 66 713 543",
+        "email": "ken@kaniff.ch",
+        "number": "1802323570",
+        "tier": "Silver",
+        "points": 220,
+        "miles": 10700,
+        "enrollmentDate": "19JAN18",
+        "blockCode": {
+            "type": "SA",
+            "message": "Some problems found with account - perform medium ver"
+        },
+        "accountStatus": {
+            "failures": 19,
+            "status": "inactive"
+        }
+    },
+    "quality": {
+        "criticals": [],
+        "markdowns": [],
+        "categories": {
+            "Communication": 5,
+            "Human connection": 10,
+            "Right servicing": 5,
+            "Contact resolution": 5,
+            "Invisible selling": 0,
+            "Adherence to procedure": 5
+        },
+        "formCategories": [
+            {
+                "id": 1,
+                "categoryName": "Communication",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 2,
+                "categoryName": "Human connection",
+                "maxScore": 10,
+                "achievedScore": 10
+            },
+            {
+                "id": 3,
+                "categoryName": "Right servicing",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 4,
+                "categoryName": "Contact resolution",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 5,
+                "categoryName": "Invisible selling",
+                "maxScore": 0,
+                "achievedScore": 0
+            },
+            {
+                "id": 6,
+                "categoryName": "Adherence to procedure",
+                "maxScore": 5,
+                "achievedScore": 5
+            }
+        ]
+    },
+    "conversation": {
+        "start": {
+            "message": "I cannot log into my app.",
+            "sharedReply": "Hello, <customerSalutation> <customerLastName>, and welcome to Tiger Airlines. My name is <username> and I will assist you today.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "What can I do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path101"
+                },
+                {
+                    "id": 2,
+                    "option": "Sorry about that. Have you tried a different device?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 3,
+                    "option": "Have you tried to reset your password?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 4,
+                    "option": "I will check it for you. May I have your membership number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 5,
+                    "option": "I'm sorry to hear about the app issues. I'll help you with that. What's your membership number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path101": {
+            "message": "I tried to log in to your app and it says that my account is deactivated.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I see. You can always create a new account. Have you tried that?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path102"
+                },
+                {
+                    "id": 2,
+                    "option": "Sorry about that. Have you tried a different device?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 3,
+                    "option": "My apologies, I missed your initial message. Please give me your membership number.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 4,
+                    "option": "I'm sorry to hear about the app issues. I'll help you with that. What's your membership number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path102": {
+            "message": "On my current account there are miles, I don't want to lose them.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "No problem, we can merge both accounts afterwards.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path103"
+                },
+                {
+                    "id": 2,
+                    "option": "Since your account was deactivated, you can only start collecting miles from scratch.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "If you have miles, then it's not the best idea to create a new account. Please give me your membership number.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 4,
+                    "option": "Please try. The miles will be automatically transferred onto your new account.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path103": {
+            "message": "Ok, I just tried to create a new account and it says that my phone number is already in use. What now?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Do you have another phone number you could provide?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path104"
+                },
+                {
+                    "id": 2,
+                    "option": "Ok, so that didn't work. May I have your membership number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path104": {
+            "message": "You might not realize it, but people generally don't own multiple phone numbers...",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "No need to get snippy. I'm just trying to help.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path105"
+                },
+                {
+                    "id": 2,
+                    "option": "Let's try a different way. Please give me your membership number.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path105": {
+            "message": "Well, you're no help. Is there someone else I could talk to?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "You can call our hotline and request to speak with a supervisor.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path106"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm sorry you feel this way. We can close the chat and you can message us again. You will most likely reach another agent.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path106": {
+            "message": "I might need to do that, bye now.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path107"
+                },
+                {
+                    "id": 2,
+                    "option": "Thank you for contacting Tiger Airlines, there will be a short survey.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path107": {
+            "message": "You haven't done anything, so no.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you for contacting Tiger Airlines, there will be a short survey.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path201": {
+            "message": "I tried on mine and my wife's phone. It worked on neither.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "This is the first time I'm hearing this. No other customers reported such issues.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path202"
+                },
+                {
+                    "id": 2,
+                    "option": "Maybe you should contact the phone manufacturer?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Ok, please try to reset your password online.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 4,
+                    "option": "Thank you for this information, I will check further. May I have your membership number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path202": {
+            "message": "What am I supposed to do then?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Yes, please try again later. I'm really sorry for the inconvenience.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 2,
+                    "option": "Maybe you should contact the phone manufacturer?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Please try to reset your password online.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 4,
+                    "option": "I will check your account. May I have your membership number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path203": {
+            "message": "Ok, I'll try again tomorrow.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Good, is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "If it doesn't work, maybe you could contact the phone manufacturer?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "Alternatively, please try to reset your password online.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 4,
+                    "option": "Thank you for contacting Tiger Airlines, there will be a short survey.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path204": {
+            "message": "No, thank you.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you for contacting Tiger Airlines, there will be a short survey.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                }
+            ]
+        }
+    }
+}

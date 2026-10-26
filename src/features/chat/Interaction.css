@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+
+.interaction {
+    margin: 0 auto;
+    background-color: #BAFCA2;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.chat-beginning {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+.breathe-box {
+    height: 200px;
+}
+
+.typing {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
