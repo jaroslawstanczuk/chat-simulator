@@ -2,7 +2,12 @@ import { useState, useEffect } from 'react';
 import './Sidebar.css';
 
 export default function Sidebar({ setActiveScenario, setActivePage }){
+    const [ isOpen, setIsOpen ] = useState(false);
     const [ scenarios, setScenarios ] = useState([]);
+
+    const toggleMenu = () =>{
+        setIsOpen(!isOpen);
+    }
 
     const handleClick = (filename) => {
         setActiveScenario(filename);
@@ -18,11 +23,24 @@ export default function Sidebar({ setActiveScenario, setActivePage }){
     }, []);
 
     return (<div className="sidebar">
-        <h4>Choose a chat</h4>
-        {scenarios && <div>
-            {scenarios.map(scenario => <Button key={scenario.id} caption={scenario.description} onClick={() => handleClick(scenario.filename)}></Button>)}    
-        </div>}
+        <HamburgerButton onToggle={toggleMenu} />
+        <div className={`sidebar-content ${isOpen ? 'active' : ''}`}>
+            <h4>Choose a chat</h4>
+            {scenarios && <div>
+                {scenarios.map(scenario => <Button key={scenario.id} caption={scenario.description} onClick={() => handleClick(scenario.filename)}></Button>)}    
+            </div>}
+        </div>
     </div>);
+}
+
+function HamburgerButton({ onToggle }){
+    return (
+        <button className="hamburger" onClick={onToggle}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    );
 }
 
 function Button({caption, onClick}){

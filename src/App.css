@@ -5,9 +5,9 @@
   /* margin: 0; */
 }
 
-@media (max-width: 768px){
+/* @media (max-width: 768px){
   .sidebar { display: none; }
-}
+} */
 
 html, body {
   min-width: 768px;
@@ -30,12 +30,6 @@ html, body {
   flex-direction: row;
   height: 100%;
   background-color: #BAFCA2;
-}
-
-@media (max-width: 768px){
-  .page {
-    flex-direction: column;
-  }
 }
 
 .page > :first-child {
@@ -61,4 +55,14 @@ html, body {
 
 .systems > :last-child {
   flex: 1;
+}
+
+@media (max-width: 768px){
+  .page > :first-child {
+    flex: 0;
+  }
+
+  .page {
+    flex-direction: column;
+  }
 }
