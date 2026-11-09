@@ -29,12 +29,6 @@
     cursor: pointer;
 }
 
-@media (max-width: 768px){
-  .topbar-navigation {
-    flex-wrap: wrap;
-  }
-}
-
 .topbar-page-link {
     padding: 10px 30px;
     border: 3px solid black;
@@ -47,4 +41,18 @@
 
 .topbar-page-link:hover{
     background-color: #4FD3C6;
+}
+
+@media (max-width: 768px){
+  .topbar-navigation {
+    display: none;
+  }
+
+  .toggle-wrapper {
+    display: none;
+  }
+
+  .topbar-title > h1 {
+    text-align: center;
+  }
 }

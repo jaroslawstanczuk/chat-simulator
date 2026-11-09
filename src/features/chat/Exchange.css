@@ -85,3 +85,13 @@
 .option:hover {
     background-color: #2FFF2F;
 }
+
+@media (max-width: 768px){
+    .msg-customer {
+        max-width: 60%;
+    }
+
+    .msg-employee {
+        max-width: 60%;
+    }
+}
