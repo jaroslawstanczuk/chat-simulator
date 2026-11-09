@@ -1,0 +1,1272 @@
+{
+    "customerName": "Smith, John Alan",
+    "customerFirstName": "John Alan",
+    "customerLastName": "Smith",
+    "customerSalutation": "Mr.",
+    "booking": {
+        "pnr": "WKND8A",
+        "passengers": [
+            {
+                "lastName": "Smith",
+                "firstName": "John Alan"
+            }
+        ],
+        "contactDetails": [
+            {
+                "mean": "phone",
+                "contact": "+33 112 233 4455"
+            },
+            {
+                "mean": "email",
+                "contact": "john@realemail.com"
+            }
+        ],
+        "flights": [
+            {
+                "number": "TN421",
+                "date": -15,
+                "class": "L",
+                "origin": "LHR",
+                "destination": "DPS",
+                "status": "FLWN"
+            },
+            {
+                "number": "TN420",
+                "date": -1,
+                "class": "V",
+                "origin": "DPS",
+                "destination": "LHR",
+                "status": "FLWN"
+            }
+        ]
+    },
+    "membership": {},
+    "quality": {
+        "criticals": [],
+        "markdowns": [],
+        "categories": {
+            "Communication": 5,
+            "Human connection": 10,
+            "Right servicing": 5,
+            "Contact resolution": 5,
+            "Invisible selling": 0,
+            "Adherence to procedure": 5
+        },
+        "formCategories": [
+            {
+                "id": 1,
+                "categoryName": "Communication",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 2,
+                "categoryName": "Human connection",
+                "maxScore": 10,
+                "achievedScore": 10
+            },
+            {
+                "id": 3,
+                "categoryName": "Right servicing",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 4,
+                "categoryName": "Contact resolution",
+                "maxScore": 5,
+                "achievedScore": 5
+            },
+            {
+                "id": 5,
+                "categoryName": "Invisible selling",
+                "maxScore": 0,
+                "achievedScore": 0
+            },
+            {
+                "id": 6,
+                "categoryName": "Adherence to procedure",
+                "maxScore": 5,
+                "achievedScore": 5
+            }
+        ]
+    },
+    "conversation": {
+        "start": {
+            "message": "Hello, I flew yesterday from Bali to London and when I came home I noticed that my suitcase was damaged.",
+            "sharedReply": "Welcome to Tiger Airlines, <customerSalutation> <customerLastName>. My name is <username> and I will assist you today.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "How can I help?",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Professionalism",
+                                "description": "Failed to refer to what customer wrote in their first message."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path101"
+                },
+                {
+                    "id": 2,
+                    "option": "I understand. Have you reported this at the airport?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 1,
+                                "category": "Communication",
+                                "score": -3,
+                                "description": "Asked if issue was reported at airport while customer wrote they noticed it at home."
+                            },
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to express empathy when customer was not happy."
+                            }
+                        ]
+                    },
+                    "goto": "path301"
+                },
+                {
+                    "id": 3,
+                    "option": "I'm sorry to hear about your damaged suitcase. I can imagine it was a major inconvenience after such a long flight. Don't worry, I will be happy to report this to our Customer Support team for further handling. May I have your booking number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path306"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            },
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -4,
+                                "description": "Lack of sincere and personalized apology."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 5,
+                    "option": "Please be informed that it's not Tiger Airlines' responsibility, damaged baggage is caused by airport staff.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Failed to own the issue and blamed external party."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path401"
+                }
+            ]
+        },
+        "path101": {
+            "message": "As I wrote, my suitcase got dented when I flew back to London. I think I'm entitled to compensation.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I understand. Do you have your booking number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to express empathy when customer was not happy."
+                            }
+                        ]
+                    },
+                    "goto": "path302"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm sorry to hear that. And please apologize that I didn't see your first message. May I have your booking number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path302"
+                },
+                {
+                    "id": 3,
+                    "option": "Passengers must report any misplaced or damaged baggage at the airport. Have you done it?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to express empathy when customer was not happy."
+                            }
+                        ]
+                    },
+                    "goto": "path402"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 5,
+                    "option": "I apologize for missing your previous message. And I'm sorry to hear about your suitcase. Please give me your booking reference so that I can assist you quicker.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path302"
+                }
+            ]
+        },
+        "path201": {
+            "message": "Okay, I was on your website and couldn't find it.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "In that case please type in Google 'Tiger Airlines damaged baggage' and it should be one of the first results.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 4,
+                                "category": "Contact resolution",
+                                "score": -2,
+                                "description": "Not provided a direct link to the form or guided customer through the website."
+                            }
+                        ]
+                    },
+                    "goto": "path205"
+                },
+                {
+                    "id": 2,
+                    "option": "Sorry about that. Here is the direct link to the form: https://tigerairlines.com/feedback/",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 3,
+                    "option": "If you go to our website, you can click on Help and select Baggage. You will be redirected to the form.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path205"
+                },
+                {
+                    "id": 4,
+                    "option": "I will be happy to assist you with filling out the form. Would you like me to do it?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path501"
+                },
+                {
+                    "id": 5,
+                    "option": "You will find it on our homepage, you literally cannot miss it.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 4,
+                                "category": "Contact resolution",
+                                "score": -3,
+                                "description": "Failed to guide the customer on the website."
+                            }
+                        ]
+                    },
+                    "goto": "path202"
+                }
+            ]
+        },
+        "path202": {
+            "message": "I LITERALLY just tried it and couldn't find it, where should I go?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Okay, you can go to Help and then select Share Feedback. Can you see it?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path204"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm sorry, but if you are not able to find it, please try a different browser or ask somebody in your household to help you.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Acceptance",
+                                "description": "Refused to assist the customer altogether."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path404"
+                },
+                {
+                    "id": 3,
+                    "option": "In that case please type in Google 'Tiger Airlines damaged baggage' and it should be one of the first results.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 4,
+                                "category": "Contact resolution",
+                                "score": -2,
+                                "description": "Not provided a direct link to the form or guided customer through the website."
+                            }
+                        ]
+                    },
+                    "goto": "path205"
+                },
+                {
+                    "id": 4,
+                    "option": "I will be happy to assist you with filling out the form. Would you like me to do it?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path501"
+                },
+                {
+                    "id": 5,
+                    "option": "Sorry about that. Here is the direct link to the form: https://tigerairlines.com/feedback/",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                }
+            ]
+        },
+        "path203": {
+            "message": "Okay, thank you.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you for contacting Tiger Airlines. There will be a short survey after the chat. Have a good day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to offer final assistance."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Is there anything else I can help you with?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path901"
+                },
+                {
+                    "id": 3,
+                    "option": "No problem. Have a nice day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -8,
+                                "description": "Failed to offer final assistance and personalized closing message."
+                            },
+                            {
+                                "categoryId": 6,
+                                "category": "Adherence to procedure",
+                                "score": -4,
+                                "description": "Survey invitation missing."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path204": {
+            "message": "Yes, I see that now. So I just fill out the form and that's it?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Exactly, our Customer Support team will get back to you within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 2,
+                    "option": "I you prefer, I can also create a case on your behalf.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path501"
+                },
+                {
+                    "id": 3,
+                    "option": "Yes please, just follow the instructions on the website.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 4,
+                                "resolution": "Contact resolution",
+                                "score": -3,
+                                "description": "Failed to inform the customer about processing time."
+                            }
+                        ]
+                    },
+                    "goto": "path203"
+                }
+            ]
+        },
+        "path205": {
+            "message": "Okay, that worked. Thank you. I will do that now.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "No problem. Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path901"
+                },
+                {
+                    "id": 2,
+                    "option": "I you prefer, I can also create a case on your behalf.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path501"
+                },
+                {
+                    "id": 3,
+                    "option": "Great, in that case I wish you a nice day and there will be a survey after this chat.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -8,
+                                "description": "Failed to offer final assistance and personalized closing message."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path301": {
+            "message": "No, as I mentioned, I didn’t see this until I got home.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I understand. Do you have your booking number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to express empathy when customer was not happy."
+                            }
+                        ]
+                    },
+                    "goto": "path302"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm sorry to hear that. And please apologize that I didn't see your first message. May I have your booking number?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path302"
+                },
+                {
+                    "id": 3,
+                    "option": "Passengers must report any misplaced or damaged baggage at the airport. Have you done it?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to express empathy when customer was not happy."
+                            }
+                        ]
+                    },
+                    "goto": "path402"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 5,
+                    "option": "I apologize for missing your previous message. And I'm sorry to hear about your suitcase. Please give me your booking reference so that I can assist you quicker.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path302"
+                }
+            ]
+        },
+        "path302": {
+            "message": "My booking number is <customerBooking>.",
+            "sharedReply": "Thank you.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Please confirm your full name as stated on the ticket, plus date of your outbound journey.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path303"
+                },
+                {
+                    "id": 2,
+                    "option": "May I know the flight number which you took?",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Verification",
+                                "description": "Failed to verify customer's name."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path304"
+                },
+                {
+                    "id": 3,
+                    "option": "I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Verification",
+                                "description": "Failed to perform security verification."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 5,
+                    "option": "Here is the phone number and email to our Baggage Services in London. Please contact them for your claim.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path303": {
+            "message": "My name is <customerFirstName> <customerLastName> and I flew on the 7th of October.",
+            "sharedReply": "Thank you for verifying your identity.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 2,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 3,
+                    "option": "Here is the phone number and email to our Baggage Services in London. Please contact them for your claim.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path304": {
+            "message": "My flight number was TN420.",
+            "sharedReply": "Thank you for confirming.",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 2,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 3,
+                    "option": "Here is the phone number and email to our Baggage Services in London. Please contact them for your claim.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path305": {
+            "message": "Okay, I will give them a call. Thanks.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you for contacting Tiger Airlines. There will be a short survey after the chat. Have a good day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to offer final assistance."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Is there anything else I can help you with?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path901"
+                },
+                {
+                    "id": 3,
+                    "option": "No problem. Have a nice day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -8,
+                                "description": "Failed to offer final assistance and personalized closing message."
+                            },
+                            {
+                                "categoryId": 6,
+                                "category": "Adherence to procedure",
+                                "score": -4,
+                                "description": "Survey invitation missing."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path306": {
+            "message": "Yes, I was too tired to deal with this. My booking number is <customerBooking>.",
+            "sharedReply": "Thank you, it's good that you contacted us right away!",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Please confirm your full name as stated on the ticket, plus date of your outbound journey.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path303"
+                },
+                {
+                    "id": 2,
+                    "option": "May I know the flight number which you took?",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Verification",
+                                "description": "Failed to verify customer's name."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path304"
+                },
+                {
+                    "id": 3,
+                    "option": "I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Verification",
+                                "description": "Failed to perform security verification."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 5,
+                    "option": "Here is the phone number and email to our Baggage Services in London. Please contact them for your claim.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path305"
+                }
+            ]
+        },
+        "path401": {
+            "message": "But I flew with your airline. So who can help me?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Please visit your arrival airport's official website for their contact details.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path403"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm sorry, let me provide the contact details of our Baggage Services in London Airport.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path406"
+                },
+                {
+                    "id": 3,
+                    "option": "I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to express empathy when customer was not happy."
+                            }
+                        ]
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                }
+            ]
+        },
+        "path402": {
+            "message": "No, I have NOT reported it at the airport. I just wrote you that I noticed it at home. Are you receiving my messages?",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Please visit your arrival airport's official website for their contact details.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path403"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm sorry, let me provide the contact details of our Baggage Services in London Airport.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to a department that is not dealing with such cases."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path406"
+                },
+                {
+                    "id": 3,
+                    "option": "I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 2,
+                                "category": "Human connection",
+                                "score": -6,
+                                "description": "Failed to express empathy when customer was not happy."
+                            }
+                        ]
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [
+                            {
+                                "category": "Business",
+                                "description": "Referred to online form without offering to create an offline claim."
+                            }
+                        ],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                }
+            ]
+        },
+        "path403": {
+            "message": "Who should I contact at the airport? There are many phone numbers...",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "You could for example call Airport Information. They will redirect you to the right department.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path404"
+                },
+                {
+                    "id": 2,
+                    "option": "Lost and Found would be your best bet.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path405"
+                },
+                {
+                    "id": 3,
+                    "option": "I apologize for the confusion. I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 4,
+                    "option": "In that case please submit a baggage claim on our website. I do apologize for the inconvenience.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path201"
+                },
+                {
+                    "id": 5,
+                    "option": "Here is the phone number and email to our Baggage Services in London. Please contact them for your claim.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path406"
+                }
+            ]
+        },
+        "path404": {
+            "message": "Wow, your customer service is a joke. Thanks for nothing.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path902"
+                },
+                {
+                    "id": 2,
+                    "option": "Thank you for contacting Tiger Airlines. There will be a short survey after the chat. Have a good day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 3,
+                    "option": "I understand. Have a nice day nonetheless!",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 6,
+                                "category": "Adherence to procedure",
+                                "score": -4,
+                                "description": "Survey invitation missing."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path405": {
+            "message": "Why Lost and Found? I have not lost anything. My suitcase is damaged.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "They will be able to assist you with your request.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path404"
+                },
+                {
+                    "id": 2,
+                    "option": "You could for example call Airport Information. They will redirect you to the right department.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path404"
+                },
+                {
+                    "id": 3,
+                    "option": "I apologize for the confusion. I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                }
+            ]
+        },
+        "path406": {
+            "message": "Okay, I will contact the Baggage Services.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "No problem. Have a nice day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 6,
+                                "category": "Adherence to procedure",
+                                "score": -4,
+                                "description": "Survey invitation missing."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path901"
+                }
+            ]
+        },
+        "path501": {
+            "message": "Yes please, that would be very helpful. 🙏",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "I will create a case with our Customer Support team. They will get back to you per email within 28 days.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path203"
+                },
+                {
+                    "id": 2,
+                    "option": "Okay, I will do that and you will receive an email confirmation soon.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path502"
+                },
+                {
+                    "id": 3,
+                    "option": "Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path901"
+                }
+            ]
+        },
+        "path502": {
+            "message": "Okay, thank you.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "No problem. Have a nice day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 6,
+                                "category": "Adherence to procedure",
+                                "score": -4,
+                                "description": "Survey invitation missing."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "Is there anything else I can do for you?",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "path901"
+                }
+            ]
+        },
+        "path901": {
+            "message": "No, thank you for your help.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you for contacting Tiger Airlines. There will be a short survey after the chat. Have a good day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "No problem. Have a nice day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 6,
+                                "category": "Adherence to procedure",
+                                "score": -4,
+                                "description": "Survey invitation missing."
+                            }
+                        ]
+                    },
+                    "goto": "end"
+                }
+            ]
+        },
+        "path902": {
+            "message": "You have not done anything, so no.",
+            "sharedReply": "",
+            "options": [
+                {
+                    "id": 1,
+                    "option": "Thank you for contacting Tiger Airlines. There will be a short survey after the chat. Have a good day.",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": []
+                    },
+                    "goto": "end"
+                },
+                {
+                    "id": 2,
+                    "option": "I'm sorry about that. Wishing you a good day!",
+                    "quality": {
+                        "criticals": [],
+                        "markdowns": [
+                            {
+                                "categoryId": 6,
+                                "category": "Adherence to procedure",
+                                "score": -4,
+                                "description": "Survey invitation missing."
+                            }
+                        ]
+                    },  
+                    "goto": "end"
+                }
+            ]
+        }
+    }
+}
