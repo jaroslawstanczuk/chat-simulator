@@ -15,7 +15,8 @@ export default function Sidebar({ setActiveScenario, setActivePage }){
     }
 
     useEffect(() => {
-        fetch('./data/scenarios.json')
+            // fetch('./data/scenarios.json')
+            fetch(`${import.meta.env.BASE_URL}data/scenarios.json`)
         .then(res => res.json())
         .then(data => {
             setScenarios(data.scenarios);
